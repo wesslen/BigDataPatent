@@ -12,7 +12,7 @@ setwd("~/Dropbox/Project - Big Data Analytics/Hadoop")
 #install.packages('tm')
 #install.packages('SnowballC')
 
-#import these librarys
+#import these libraries
 library(tm)         #text mining package
 library(wordcloud)  #wordcloud package
 #library(SnowballC) #Used for Stemming, which is not being used yet so do not need
