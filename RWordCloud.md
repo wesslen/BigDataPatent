@@ -36,13 +36,11 @@ str(data)
 
 ```r
 #Format Abstract
-
 Abstracts <- paste(data$PatentAbstract, collapse=" ")
 review_source <- VectorSource(Abstracts)
 corpus <- Corpus(review_source)
 
 #Format Titles
-
 Titles <- paste(data$PatentTitle, collapse=" ")
 review_source <- VectorSource(Titles)
 corpusTitle <- Corpus(review_source)
