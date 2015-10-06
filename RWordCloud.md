@@ -56,9 +56,6 @@ Background on stemming: [Reference website](http://l.rud.is/YiKB9G)
 corpus <- tm_map(corpus, content_transformer(tolower), mc.cores=1)
 corpusTitle <- tm_map(corpusTitle, content_transformer(tolower), mc.cores=1)
 
-#got errors when ran: corpus <- tm_map(corpus, content_transformer(stri_trans_tolower))
-#see reference document, bottom comments
-
 #remove punctuation
 corpus <- tm_map(corpus, content_transformer(removePunctuation))
 corpusTitle <- tm_map(corpusTitle, content_transformer(removePunctuation))
@@ -66,13 +63,6 @@ corpusTitle <- tm_map(corpusTitle, content_transformer(removePunctuation))
 #strip white space
 corpus <- tm_map(corpus, content_transformer(stripWhitespace))
 corpusTitle <- tm_map(corpusTitle, content_transformer(stripWhitespace))
-
-### Stemming -- this is commented out because it took too long; however, we'll need to run this evenutally
-## save original corpus
-## c_orig = corpus
-### do the actual stemming
-## corpus = tm_map(corpus, stemDocument)
-## corpus = tm_map(corpus, stemCompletion, dictionary=c_orig)
 
 #remove stop words; added first, second, one as additional common words that don't seem to add value
 stopwords <- c(stopwords("english"),"first","second","one","two")
@@ -125,7 +115,6 @@ set.seed(12345)
 wordcloud(words = words, freq = frequency, min.freq = 1,
           max.words=200, random.order=FALSE, rot.per=0.35, 
           colors=brewer.pal(8, "Dark2"))
-# warning are ok -- they are words that couldn't fit on the plot
 
 wordsTitle <- names(frequencyTitle)
 set.seed(12345)
