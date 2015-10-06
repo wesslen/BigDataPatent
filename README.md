@@ -5,7 +5,14 @@ Text Mining Patents for Big Data Course Project
 # Introduction
 This readme outlines the steps in Python to text mine Patents for 3M.
 
-# Modules & Set Working Directory
+There are four sections (so far) of the code:
+1. Modules & Working Directory
+2. Exploratory Analysis of a Sample of Abstracts
+3. Data Wrangling (Tokenize, Clean, TF-IDF)
+4. Topic Modeling (K-Means, LDA, Topic Word Cloud)
+5. 
+
+# 1. Modules & Set Working Directory
 
 ## For Python, you must call in modules that you will use later on.
 
@@ -55,9 +62,9 @@ exampleData.columns.values
 ```
 
 
-# Exploratory Analysis of Abstracts
+# 2. Exploratory Analysis of Abstracts
 
-# Four Examples of Abstracts
+## Four Examples of Abstracts
 A normal, non-normal, missing and duplicated abstract  
 
 ```python
@@ -114,7 +121,7 @@ print(patent_to_words(exampleData["PatentAbstract"][20]))
 
 ```
 
-# Data Wrangling
+# 3. Data Wrangling
 
 ## Clean and Tokenize patents into lists (each patent is a words array)
 
@@ -122,7 +129,7 @@ print(patent_to_words(exampleData["PatentAbstract"][20]))
 
 ## Term Frequency and Inverse Document Frequency (TF-IDF)
 
-# Topic Modeling
+# 4. Topic Modeling
 
 ## Run KMeans.py to create KMeans function and to Determine Number of Topics
 
