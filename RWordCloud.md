@@ -5,9 +5,6 @@ Set your working directory, install packages (if necessary, uncomment) and impor
 
 ```r
 # change this to your working directory
-# CPU Lab 
-setwd("C:/Users/rwesslen/Dropbox/Project - Big Data Analytics/WordCloud")
-# Ubuntu
 setwd("~/Dropbox/Project - Big Data Analytics/Hadoop")
 
 #if first time, download these libraries:
@@ -28,14 +25,14 @@ library(wordcloud)  #wordcloud package
 data <- read.csv("3M onlyRyan.csv", header=FALSE, strip.white = TRUE, stringsAsFactors=FALSE)
 
 #load column names
-names(data) <- c("PatentNumber","CompanyName","PatentAssignee","YearGranted","YearApplied","PatentClass"
-                  ,"PatentTitle","PatentAbstract")
+names(data) <- c("PatentNumber","CompanyName","PatentAssignee","YearGranted","YearApplied",
+                 "PatentClass","PatentTitle","PatentAbstract")
 
 #details about data's structure
 str(data)
 ```
 
-## Format & Clean Abstracts and Titles
+## Format Abstracts and Titles
 
 ```r
 #Format Abstract
@@ -49,16 +46,18 @@ corpus <- Corpus(review_source)
 Titles <- paste(data$PatentTitle, collapse=" ")
 review_source <- VectorSource(Titles)
 corpusTitle <- Corpus(review_source)
+```
+## Clean Abstracts and Titles
+Originally, I found a problem with the code. I needed the following site to correct the issue.
+[Reference website: "Fun Error After Running to Lower While making Twitter WordCloud"](http://stackoverflow.com/questions/27756693/fun-error-after-running-tolower-while-making-twitter-wordcloud)
 
-#Data Cleaning Steps
-
+```r
 #lower case
 corpus <- tm_map(corpus, content_transformer(tolower), mc.cores=1)
 corpusTitle <- tm_map(corpusTitle, content_transformer(tolower), mc.cores=1)
 
 #got errors when ran: corpus <- tm_map(corpus, content_transformer(stri_trans_tolower))
-#see this site http://stackoverflow.com/questions/27756693/fun-error-after-running-tolower-while-making-twitter-wordcloud
-#near the bottom is advice to use this function instead
+#see reference document, bottom comments
 
 #remove punctuation
 corpus <- tm_map(corpus, content_transformer(removePunctuation))
