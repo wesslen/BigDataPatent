@@ -6,16 +6,17 @@ Text Mining Patents for Big Data Course Project
 This readme outlines the steps in Python to text mine Patents for 3M.
 
 There are four sections (so far) of the code:
-1. Modules & Working Directory
-2. Exploratory Analysis of a Sample of Abstracts
-3. Data Wrangling (Tokenize, Clean, TF-IDF)
-4. Topic Modeling (K-Means, LDA, Topic Word Cloud)
-5. 
+
+1.  Modules & Working Directory
+2.  Exploratory Analysis of a Sample of Abstracts
+3.  Data Wrangling (Tokenize, Clean, TF-IDF)
+4.  Topic Modeling (K-Means, LDA, Topic Word Cloud)
+
 
 # 1. Modules & Set Working Directory
 
-## For Python, you must call in modules that you will use later on.
-
+## Import Modules
+For Python, you must call in modules that you will use later on.
 
 ```python
 
@@ -37,7 +38,8 @@ from gensim import corpora, models, similarities
 
 ```
 
-## Set home directory and load csv file
+## Home Directory
+Set home directory and load csv file
 
 ```python
 
@@ -66,8 +68,8 @@ exampleData.columns.values
 
 # 2. Exploratory Analysis of Abstracts
 
-## Four Examples of Abstracts
-A normal, non-normal, missing and duplicated abstract  
+## Four Examples of Abstracts; Removal of Missing Abstracts
+A normal, non-normal, missing and duplicated abstract. Also removes missing Abstracts.  
 
 ```python
 
@@ -180,7 +182,7 @@ corpus_tfidf = tfidf[corpus]
 
 ## Generate LDA Model using gensim
 
-[Reference Document for gensim module][https://github.com/piskvorky/gensim]
+[Reference Document for gensim module](https://github.com/piskvorky/gensim)
 
 ## Generate Word Clouds for each Topic
 
