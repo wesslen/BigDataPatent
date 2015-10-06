@@ -18,11 +18,13 @@ Somewhat technical:
 *  [Introduction to Bag-of-Words modeling in Python](https://www.kaggle.com/c/word2vec-nlp-tutorial/details/part-1-for-beginners-bag-of-words)
 *  [Applications and Challenges of Text Mining with Patents](http://ceur-ws.org/Vol-1292/ipamin2014_paper4.pdf)
 *  [Topic Modeling Visualizations](https://de.dariah.eu/tatom/topic_model_visualization.html)
+*  [Stemming & Lemmatization](http://textminingonline.com/dive-into-nltk-part-iv-stemming-and-lemmatization)
 
 Very technical:
 *  [NLTK Homepage](http://www.nltk.org/)
 *  [gensim Homepage](http://radimrehurek.com/gensim/index.html)
 *  [LDA Modeling for Python](https://rstudio-pubs-static.s3.amazonaws.com/79360_850b2a69980c4488b1db95987a24867a.html)
+*  [Topic Modeling (& K-Means) with Gensim](http://sujitpal.blogspot.com/2014/08/topic-modeling-with-gensim-over-past.html)
 *  [Constructing a broad-coverage lexicon for text mining in the patent domain](http://www.lrec-conf.org/proceedings/lrec2010/pdf/378_Paper.pdf)
 
 
@@ -111,7 +113,7 @@ print exampleData["PatentAbstract"][956:973]
 
 ## Run StemLemma.py (Stemmer, Lemmatization functions)
 
-[Reference Document](http://textminingonline.com/dive-into-nltk-part-iv-stemming-and-lemmatization)
+
 
 ## Two examples of old and new abstracts after cleaning.
 ```python
@@ -167,8 +169,6 @@ for i in xrange( 0, num_patents ):
 
 ## Convert tokenized document to dictionary and document-term matrix
 
-[Reference Document](https://rstudio-pubs-static.s3.amazonaws.com/79360_850b2a69980c4488b1db95987a24867a.html) 
-
 ```python
 
 # turn our tokenized documents into a id <-> term dictionary
@@ -193,15 +193,9 @@ corpus_tfidf = tfidf[corpus]
 
 Run KMeans.py to create KMeans function and to Determine Number of Topics
 
-[Reference Document](http://sujitpal.blogspot.com/2014/08/topic-modeling-with-gensim-over-past.html)
-
 ## Generate LDA Model using gensim
 
 `gensim` is a text mining module 
 
-[Homepage for gensim](
-[Github for gensim module](https://github.com/piskvorky/gensim)
-
 ## Generate Word Clouds for each Topic
 
-[Reference Document](http://sujitpal.blogspot.com/2014/08/topic-modeling-with-gensim-over-past.html)
