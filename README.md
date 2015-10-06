@@ -12,6 +12,19 @@ There are four sections (so far) of the code:
 3.  Data Wrangling (Tokenize, Clean, TF-IDF)
 4.  Topic Modeling (K-Means, LDA, Topic Word Cloud)
 
+This code was created as a collection of several online references. 
+
+Somewhat technical:
+*  [Introduction to Bag-of-Words modeling in Python](https://www.kaggle.com/c/word2vec-nlp-tutorial/details/part-1-for-beginners-bag-of-words)
+*  [Applications and Challenges of Text Mining with Patents](http://ceur-ws.org/Vol-1292/ipamin2014_paper4.pdf)
+*  [Topic Modeling Visualizations](https://de.dariah.eu/tatom/topic_model_visualization.html)
+
+Very technical:
+*  [NLTK Homepage](http://www.nltk.org/)
+*  [gensim Homepage](http://radimrehurek.com/gensim/index.html)
+*  [LDA Modeling for Python](https://rstudio-pubs-static.s3.amazonaws.com/79360_850b2a69980c4488b1db95987a24867a.html)
+*  [Constructing a broad-coverage lexicon for text mining in the patent domain](http://www.lrec-conf.org/proceedings/lrec2010/pdf/378_Paper.pdf)
+
 
 # 1. Modules & Set Working Directory
 
@@ -176,13 +189,18 @@ corpus_tfidf = tfidf[corpus]
 
 # 4. Topic Modeling
 
-## Run KMeans.py to create KMeans function and to Determine Number of Topics
+## K-Means to Determine Number of Topics
+
+Run KMeans.py to create KMeans function and to Determine Number of Topics
 
 [Reference Document](http://sujitpal.blogspot.com/2014/08/topic-modeling-with-gensim-over-past.html)
 
 ## Generate LDA Model using gensim
 
-[Reference Document for gensim module](https://github.com/piskvorky/gensim)
+`gensim` is a text mining module 
+
+[Homepage for gensim](
+[Github for gensim module](https://github.com/piskvorky/gensim)
 
 ## Generate Word Clouds for each Topic
 
