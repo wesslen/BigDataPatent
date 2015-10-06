@@ -18,6 +18,7 @@ There are four sections (so far) of the code:
 
 
 ```python
+
 import re
 import os
 
@@ -39,6 +40,7 @@ from gensim import corpora, models, similarities
 ## Set home directory and load csv file
 
 ```python
+
 #Set to your directory
 os.chdir("/home/ryanceros/Dropbox/Project - Big Data Analytics/WordCloud")
 
@@ -68,6 +70,7 @@ exampleData.columns.values
 A normal, non-normal, missing and duplicated abstract  
 
 ```python
+
 #Normal: Example of a Visual/Imaging Patent
 print exampleData["PatentAbstract"][22]
 #Systems and methods for improving visual attention models use effectiveness 
@@ -93,8 +96,11 @@ print exampleData["PatentAbstract"][956:973]
 
 ## Run StemLemma.py (Stemmer, Lemmatization functions)
 
+[Reference Document](http://textminingonline.com/dive-into-nltk-part-iv-stemming-and-lemmatization)
+
 ## Two examples of old and new abstracts after cleaning.
 ```python
+
 #Normal, changed from 24 to 20 due to dropped NaN abstracts
  
 print(patent_to_words(exampleData["PatentAbstract"][20]))
@@ -109,7 +115,7 @@ print(patent_to_words(exampleData["PatentAbstract"][20]))
 #assessment from an environment as feedback to improve visual attention models.
 #The effectiveness assessment uses data indicative of a particular behavior
  
- Abbreviated / Techincal Abstract 
+#Example of Abbreviated / Technical Abstract 
  
  print(patent_to_words(exampleData["PatentAbstract"][0]))
  
@@ -125,14 +131,57 @@ print(patent_to_words(exampleData["PatentAbstract"][20]))
 
 ## Clean and Tokenize patents into lists (each patent is a words array)
 
+```python
+
+# Get the number of reviews based on the dataframe column size
+num_patents = exampleData["PatentAbstract"].size
+
+# Initialize an empty list to hold the clean reviews
+clean_abstracts = []
+
+# Loop over each review; create an index i that goes from 0 to the length
+# of the patent list 
+for i in xrange( 0, num_patents ):
+    # Call our function for each one, and add the result to the list of
+    # clean abstracts
+    patent = patent_to_words(exampleData["PatentAbstract"][i])
+    array = patent.split()
+    clean_abstracts.append(array)
+```
+
+
 ## Convert tokenized document to dictionary and document-term matrix
 
+[Reference Document](https://rstudio-pubs-static.s3.amazonaws.com/79360_850b2a69980c4488b1db95987a24867a.html) 
+
+```python
+
+# turn our tokenized documents into a id <-> term dictionary
+dictionary = corpora.Dictionary(clean_abstracts)
+    
+# convert tokenized documents into a document-term matrix (bag-of-words)
+corpus = [dictionary.doc2bow(text) for text in clean_abstracts]
+```
+
 ## Term Frequency and Inverse Document Frequency (TF-IDF)
+
+```python
+
+#TF IDF
+tfidf = models.TfidfModel(corpus, normalize=True)
+corpus_tfidf = tfidf[corpus]
+```
 
 # 4. Topic Modeling
 
 ## Run KMeans.py to create KMeans function and to Determine Number of Topics
 
+[Reference Document](http://sujitpal.blogspot.com/2014/08/topic-modeling-with-gensim-over-past.html)
+
 ## Generate LDA Model using gensim
 
+[Reference Document for gensim module][https://github.com/piskvorky/gensim]
+
 ## Generate Word Clouds for each Topic
+
+[Reference Document](http://sujitpal.blogspot.com/2014/08/topic-modeling-with-gensim-over-past.html)
