@@ -51,6 +51,8 @@ corpusTitle <- Corpus(review_source)
 Originally, I found a problem with the code. I needed the following site to correct the issue.
 [Reference website: "Fun Error After Running to Lower While making Twitter WordCloud"](http://stackoverflow.com/questions/27756693/fun-error-after-running-tolower-while-making-twitter-wordcloud)
 
+Background on stemming: [Reference website](http://l.rud.is/YiKB9G)
+
 ```r
 #lower case
 corpus <- tm_map(corpus, content_transformer(tolower), mc.cores=1)
@@ -67,14 +69,12 @@ corpusTitle <- tm_map(corpusTitle, content_transformer(removePunctuation))
 corpus <- tm_map(corpus, content_transformer(stripWhitespace))
 corpusTitle <- tm_map(corpusTitle, content_transformer(stripWhitespace))
 
-## Stemming -- this is commented out because it took too long; however, we'll need to run this evenutally
-# perform basic stemming : background: http://l.rud.is/YiKB9G pulled from: http://www.r-bloggers.com/visualizing-risky-words-part-2/
-# save original corpus
-# c_orig = corpus
-
-## do the actual stemming
-# corpus = tm_map(corpus, stemDocument)
-# corpus = tm_map(corpus, stemCompletion, dictionary=c_orig)
+### Stemming -- this is commented out because it took too long; however, we'll need to run this evenutally
+## save original corpus
+## c_orig = corpus
+### do the actual stemming
+## corpus = tm_map(corpus, stemDocument)
+## corpus = tm_map(corpus, stemCompletion, dictionary=c_orig)
 
 #remove stop words; added first, second, one as additional common words that don't seem to add value
 stopwords <- c(stopwords("english"),"first","second","one","two")
