@@ -5,12 +5,12 @@ Text Mining Patents for Big Data Course Project
 # Introduction
 This readme outlines the steps in Python to text mine Patents for 3M.
 
+# Modules & Set Working Directory
 
-# Modules
-For Python, you must call in modules that you will use later on.
+## For Python, you must call in modules that you will use later on.
 
 
-```
+```python
 import re
 import os
 
@@ -29,9 +29,9 @@ from gensim import corpora, models, similarities
 
 ```
 
-# Set home directory and load csv file
+## Set home directory and load csv file
 
-```
+```python
 #Set to your directory
 os.chdir("/home/ryanceros/Dropbox/Project - Big Data Analytics/WordCloud")
 
@@ -56,9 +56,11 @@ exampleData.columns.values
 
 
 # Exploratory Analysis of Abstracts
-Look at four examples of Abstracts: normal, non-normal, missing and duplicated.  
 
-```
+# Four Examples of Abstracts
+A normal, non-normal, missing and duplicated abstract  
+
+```python
 #Normal: Example of a Visual/Imaging Patent
 print exampleData["PatentAbstract"][22]
 #Systems and methods for improving visual attention models use effectiveness 
@@ -82,10 +84,10 @@ print exampleData["PatentAbstract"][956:973]
 #Pharmaceutical formulations and methods includ... (multiple lines...)
 ```
 
-# Run StemLemma.py (Stemmer, Lemmatization functions)
+## Run StemLemma.py (Stemmer, Lemmatization functions)
 
-# Two examples of old and new abstracts after cleaning.
-```
+## Two examples of old and new abstracts after cleaning.
+```python
 #Normal, changed from 24 to 20 due to dropped NaN abstracts
  
 print(patent_to_words(exampleData["PatentAbstract"][20]))
@@ -112,14 +114,18 @@ print(patent_to_words(exampleData["PatentAbstract"][20]))
 
 ```
 
-# Clean and Tokenize patents into lists (each patent is a words array)
+# Data Wrangling
 
-# Convert tokenized document to dictionary and document-term matrix
+## Clean and Tokenize patents into lists (each patent is a words array)
 
-# Term Frequency and Inverse Document Frequency (TF-IDF)
+## Convert tokenized document to dictionary and document-term matrix
 
-# Run KMeans.py to create KMeans function and to Determine Number of Topics
+## Term Frequency and Inverse Document Frequency (TF-IDF)
 
-# Generate LDA Model using gensim
+# Topic Modeling
 
-# Generate Word Clouds for each Topic
+## Run KMeans.py to create KMeans function and to Determine Number of Topics
+
+## Generate LDA Model using gensim
+
+## Generate Word Clouds for each Topic
