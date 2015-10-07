@@ -1,8 +1,8 @@
-# BigDataPatent
+# Patent Project for Big Data for Competitive Advantage (DSBA 6140)
 Text Mining Patents for Big Data Course Project
 
 
-# Introduction
+## Introduction
 This readme outlines the steps in Python to text mine Patents for 3M.
 
 There are four sections (so far) of the code:
@@ -28,9 +28,9 @@ Very technical:
 *  [Constructing a broad-coverage lexicon for text mining in the patent domain](http://www.lrec-conf.org/proceedings/lrec2010/pdf/378_Paper.pdf)
 
 
-# 1. Modules & Set Working Directory
+## 1. Modules & Set Working Directory
 
-## Import Modules
+### Import Modules
 For Python, you must call in modules that you will use later on.
 
 ```python
@@ -53,7 +53,7 @@ from gensim import corpora, models, similarities
 
 ```
 
-## Home Directory
+### Home Directory
 Set home directory and load csv file
 
 ```python
@@ -81,9 +81,9 @@ exampleData.columns.values
 ```
 
 
-# 2. Exploratory Analysis of Abstracts
+## 2. Exploratory Analysis of Abstracts
 
-## Four Examples of Abstracts; Removal of Missing Abstracts
+### Four Examples of Abstracts; Removal of Missing Abstracts
 A normal, non-normal, missing and duplicated abstract. Also removes missing Abstracts.  
 
 ```python
@@ -144,9 +144,9 @@ print(patent_to_words(exampleData["PatentAbstract"][20]))
 
 ```
 
-# 3. Data Wrangling
+## 3. Data Wrangling
 
-## Clean and Tokenize patents into lists (each patent is a words array)
+### Clean and Tokenize patents into lists (each patent is a words array)
 
 ```python
 
@@ -167,7 +167,7 @@ for i in xrange( 0, num_patents ):
 ```
 
 
-## Convert tokenized document to dictionary and document-term matrix
+### Convert tokenized document to dictionary and document-term matrix
 
 ```python
 
@@ -178,7 +178,7 @@ dictionary = corpora.Dictionary(clean_abstracts)
 corpus = [dictionary.doc2bow(text) for text in clean_abstracts]
 ```
 
-## Term Frequency and Inverse Document Frequency (TF-IDF)
+### Term Frequency and Inverse Document Frequency (TF-IDF)
 
 ```python
 
@@ -187,15 +187,15 @@ tfidf = models.TfidfModel(corpus, normalize=True)
 corpus_tfidf = tfidf[corpus]
 ```
 
-# 4. Topic Modeling
+## 4. Topic Modeling
 
-## K-Means to Determine Number of Topics
+### K-Means to Determine Number of Topics
 
 Run KMeans.py to create KMeans function and to Determine Number of Topics
 
-## Generate LDA Model using gensim
+### Generate LDA Model using gensim
 
 `gensim` is a text mining module 
 
-## Generate Word Clouds for each Topic
+### Generate Word Clouds for each Topic
 
