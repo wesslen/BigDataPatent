@@ -1,6 +1,4 @@
 # Patent Project for Big Data for Competitive Advantage (DSBA 6140)
-Topic Modeling Patents for Big Data Course Project
-
 
 ## Introduction
 This readme outlines the steps in Python to text mine Patents for 3M and seven competitors.
@@ -128,6 +126,7 @@ Using an example (num = 560), we explore fields about the patent including what 
 ## 3. Data Wrangling
 
 ### Clean and Tokenize patents into lists (each patent is a words array)
+This section first cleans and tokensizes the patent abstracts into unigrams. Next, using gensim's Phrases function, we create additional bigrams to include in the topic modeling. We used [12] as a reference to create the bigrams.
 
 ```python
 
@@ -156,7 +155,6 @@ for i in xrange(0,num_patents):
     final_abstracts.append(temp_bigram)
  
 ```
-
 
 ### Convert tokenized document to dictionary and document-term matrix
 
