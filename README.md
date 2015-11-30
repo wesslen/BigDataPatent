@@ -330,3 +330,5 @@ plt.pcolor(newPlot2.transpose(), norm=None, cmap='Blues')
 plt.yticks(np.arange(5)+0.5, topic_labels)
 plt.colorbar(cmap='Blues')
 ```
+
+![Topic Probabilities Output](https://cloud.githubusercontent.com/assets/7621432/11481385/33be51d2-976b-11e5-9d0c-08d4d836416e.png)
