@@ -21,7 +21,7 @@ from wordcloud import WordCloud
 import gensim
 from gensim import corpora, models, similarities
  
-# home directory - modify to your own homedirectory
+# home directory - modify to your own home directory
 os.chdir("/home/ryanceros/Dropbox/Project - Big Data Analytics/WordCloud")
 
 # Part II: Load Dataset, Set Column Names and Sample Data
