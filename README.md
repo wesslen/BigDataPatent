@@ -3,7 +3,7 @@ Topic Modeling Patents for Big Data Course Project
 
 
 ## Introduction
-This readme outlines the steps in Python to text mine Patents for 3M.
+This readme outlines the steps in Python to text mine Patents for 3M and seven competitors.
 
 There are five sections of the code:
 
