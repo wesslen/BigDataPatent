@@ -238,6 +238,27 @@ for line in final_topics:
     plt.axis("off")    
     curr_topic += 1
 ```
+"Synthetic Materials":
+
+![topicmaterials](https://cloud.githubusercontent.com/assets/7621432/11481766/41baac52-976d-11e5-856f-ee28b0a326da.png)
+
+"Data & Information":
+
+![topicdata](https://cloud.githubusercontent.com/assets/7621432/11481765/41bab864-976d-11e5-9811-c21a77e94bb4.png)
+
+"Chemistry":
+
+![topicchemistry](https://cloud.githubusercontent.com/assets/7621432/11481764/41ba4e4c-976d-11e5-89a6-885b277dad2f.png)
+
+"Electrical":
+
+![topicelectrical](https://cloud.githubusercontent.com/assets/7621432/11481762/41b977e2-976d-11e5-9b48-f5abe7da1f3f.png)
+
+"Energy":
+
+![topicenergy](https://cloud.githubusercontent.com/assets/7621432/11481763/41b9f96a-976d-11e5-9a3b-af05cc951275.png)
+
+
 
 ### Plot Probability heatmap (Before Topic Clusters)  
 This step creates a topic probability heatmap for all documents. It is unordered so the probabilities will be scattered since they are based on the order of the dataset. [3] was referenced to create this part of the code.
