@@ -73,7 +73,7 @@ os.chdir("/home/ryanceros/Dropbox/Project - Big Data Analytics/WordCloud")
 ## 2. Load Dataset, Set Column Names and Sample Data
 
 ### Load Dataset and Set Column Names
-The dataset containing nearly 33,000 patents for eight companies is named "updatedCompanies.csv".
+The dataset is named "updatedCompanies.csv". It includes nearly 33,000 patents for eight companies (3M and seven competitors).
 
 ```python
 # sample dataset
@@ -105,7 +105,7 @@ exec(open("StemLemma.py").read())
 ```
 
 ## Sample (Explore) Data
-Using an example (num = 560), we explore fields about the patent including what the Abstract Bag-of-Words looks like.
+Using an example (num = 560), explore fields including the Abstract Bag-of-Words.
 
 ```python
  num=560
