@@ -1,7 +1,7 @@
 # Patent Project for Big Data for Competitive Advantage (DSBA 6140)
 
 ## Introduction
-This readme outlines the steps in Python to text mine Patents for 3M and seven competitors.
+This readme outlines the steps in Python to use topic modeling on US patents for 3M and seven competitors.
 
 There are five sections of the code:
 
@@ -11,7 +11,7 @@ There are five sections of the code:
 4.  Topic Modeling (K-Means, LDA, Topic Word Cloud)
 5.  K-Means Clustering on the Topic Probabilities
 
-This code was created as a collection of several online references. Each reference is labelled with a [number] tag that will be used through this document to cite when a reference was used to create the section of code.
+This code was created as a collection of several online references. Each reference is labelled with a [number] tag that will be used through this document to cite references.
 
 Somewhat technical:
 *  [1] [Introduction to Bag-of-Words modeling in Python](https://www.kaggle.com/c/word2vec-nlp-tutorial/details/part-1-for-beginners-bag-of-words)
@@ -33,7 +33,7 @@ Very technical:
 ## 1. Modules & Set Working Directory
 
 ### Import Modules
-For Python, you must call in modules that you will use later on.
+For Python, call modules that will be used in this script.
 
 ```python
 
